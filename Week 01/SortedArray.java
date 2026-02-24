@@ -1,50 +1,31 @@
+class CheckSortedArray {
 
-class FindMinMaxElement {
-
-    public static void findSecondMinMax(int[] nums) {
+    public static boolean isSorted(int[] nums) {
 
         if (nums == null || nums.length < 2) {
-            System.out.println("-1 -1");
-            return;
+            return true;
         }
 
-        int min = Integer.MAX_VALUE;
-        int secondMin = Integer.MAX_VALUE;
-
-        int max = Integer.MIN_VALUE;
-        int secondMax = Integer.MIN_VALUE;
-        
-        for(int num: nums){
-
-            if(num < min){
-                secondMin = min;
-                min = num;
-            }else if(num < secondMin && num != min){
-                secondMin = num;
-            }
-
-            if(num > max){
-                secondMax = max;
-                max = num;
-            }else if(num > secondMax && num != max){
-                secondMax = num;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                return false;
             }
         }
 
-        if(secondMax == Integer.MIN_VALUE) secondMax = -1;
-        if(secondMin == Integer.MAX_VALUE) secondMin = -1;
-        
-        System.out.println("Second Smallest: " + secondMin);
-        System.out.println("Second Largest: " + secondMax);
+        return true;
     }
 }
 
-public class FindSecondLargestElement2 {
+public class SortedArray {
 
     public static void main(String[] args) {
 
-        int[] myNumbers = {1,2,31,31,21,11,61};
+        int[] myNumbers = {1, 2, 3, 4, 5, 6};
 
-        FindMinMaxElement.findSecondMinMax(myNumbers);
+        if (CheckSortedArray.isSorted(myNumbers)) {
+            System.out.println("Array is sorted");
+        } else {
+            System.out.println("Array is NOT sorted");
+        }
     }
 }

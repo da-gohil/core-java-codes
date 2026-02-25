@@ -7,7 +7,7 @@ class Solution {
         try{
             if(sc.hasNextInt()){
                 int number = sc.nextInt();
-                System.out.println(number);
+                System.out.println("The number entered is : " + number);
             }else{
                 System.err.println("Input is not an integer");
             }

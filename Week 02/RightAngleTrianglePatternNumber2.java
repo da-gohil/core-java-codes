@@ -6,7 +6,6 @@
 // 55555
 // 666666
 
-
 public class RightAngleTrianglePatternNumber2{
 
     public static void main(String [] args){
